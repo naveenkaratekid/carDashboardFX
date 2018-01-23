@@ -1,0 +1,8 @@
+.slider .thumb
+{
+	-fx-background-image: url("cooledsteeringwheel.png");
+	-fx-background-repeat: no-repeat;
+	-fx-background-color: #f4f4f4;
+	-fx-background-position: center, center, center;
+	-fx-padding: 40;
+}

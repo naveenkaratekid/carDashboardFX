@@ -1,0 +1,16 @@
+.slider .track
+{
+	-fx-padding: 40;
+	-fx-font: 50px "Arial";
+	-fx-background-image: url("temp3.png");
+	
+}
+
+.slider .thumb
+{
+	-fx-background-image: url("seat.png");
+	-fx-background-repeat: no-repeat;
+	-fx-background-color: #f4f4f4;
+	-fx-background-position: center, center, center;
+	-fx-padding: 40;
+}

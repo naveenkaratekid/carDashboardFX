@@ -1,0 +1,17 @@
+.slider .track
+{
+	-fx-padding: 12;
+	-fx-font: 50px "Arial";
+	-fx-background-image: url("temperature5.png");
+	-fx-background-repeat: no-repeat;
+	
+}
+
+.slider .thumb
+{
+	-fx-background-image: url("steeringwheel.png");
+	-fx-background-repeat: no-repeat;
+	-fx-background-color: #f4f4f4;
+	-fx-background-position: center, center, center;
+	-fx-padding: 25;
+}

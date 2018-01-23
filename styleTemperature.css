@@ -1,0 +1,16 @@
+.slider .track
+{
+	-fx-background-image: url("temp4.png");
+	-fx-pref-height: 50;
+	-fx-pref-width: 35;
+	-fx-padding: 30;
+	
+	
+}
+
+.slider .thumb
+{
+	-fx-pref-height: 30;
+	-fx-prefer-width: 30;
+	
+}

@@ -1,0 +1,16 @@
+.slider .track
+{
+	-fx-padding: 5;
+	-fx-background-image: url("temperature5.png");
+	/*-fx-background-repeat: no-repeat;*/
+	
+}
+
+
+.slider 
+ {
+	-fx-background-insets: 0; 
+	-fx-background-radius: 0;
+	-fx-padding: 10;
+	-fx-border-insets: 0;
+}

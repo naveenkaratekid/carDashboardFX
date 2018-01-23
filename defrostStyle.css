@@ -1,0 +1,16 @@
+.toggle-button
+{
+	-fx-graphic: url('defrost.png');
+	-fx-background-repeat: no-repeat;
+	-fx-background-position: center;
+	-fx-background-color: #f4f4f4;
+	
+}
+
+.toggle-button:selected
+{
+	-fx-graphic: url('defroston.png');
+	-fx-background-repeat: no-repeat;
+	-fx-background-position: center;
+	-fx-background-color: #f4f4f4;
+}

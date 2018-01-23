@@ -1,0 +1,16 @@
+.toggle-button
+{
+	-fx-graphic: url('face1.png');
+	-fx-background-repeat: no-repeat;
+	-fx-background-position: center;
+	-fx-background-color: #f4f4f4;
+	
+}
+
+.toggle-button:selected
+{
+	-fx-graphic: url('face1selected.png');
+	-fx-background-repeat: no-repeat;
+	-fx-background-position: center;
+	-fx-background-color: #f4f4f4;
+}

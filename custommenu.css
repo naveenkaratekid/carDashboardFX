@@ -1,0 +1,58 @@
+.custom-menu 
+{
+    -fx-background-color: black;
+    -fx-padding: 0;
+    -fx-pref-width: 150;
+    -fx-pref-height: 100;
+    -fx-graphic: url("seaticon1.png");
+}
+
+.custom-menu-item 
+{
+    -fx-background-color: black;
+    -fx-padding: 0;
+    -fx-pref-width: 150;
+    -fx-pref-height: 100;
+}
+
+.custom-menu-item:focused 
+{
+    -fx-background-color: black;
+    -fx-padding: 0;
+    -fx-pref-width: 150;
+    -fx-pref-height: 100;
+}
+.custom-menu-item:hover 
+{
+    -fx-background-color: black;
+    -fx-padding: 0;
+    -fx-pref-width: 150;
+    -fx-pref-height: 100;
+}
+
+
+.radio-menu 
+{
+    -fx-background-color: black;
+    -fx-padding: 0;
+}
+
+.radio-menu-item 
+{
+    -fx-background-color: black;
+    -fx-padding: 0;
+    -fx-font-size: 20px;
+}
+
+.radio-menu-item:focused 
+{
+    -fx-background-color: black;
+    -fx-padding: 0;
+    -fx-font-size: 20px;
+}
+.radio-menu-item:hover 
+{
+    -fx-background-color: black;
+    -fx-padding: 0;
+    -fx-font-size: 20px;
+}

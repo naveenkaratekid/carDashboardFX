@@ -1,0 +1,35 @@
+.custom-menu 
+{
+    -fx-background-color: black;
+    -fx-padding: 0;
+    -fx-pref-width: 150;
+    -fx-pref-height: 100;
+}
+
+.custom-menu-item 
+{
+    -fx-background-color: black;
+    -fx-padding: 0;
+    -fx-pref-width: 150;
+    -fx-pref-height: 100;
+}
+
+.custom-menu-item:focused 
+{
+    -fx-background-color: black;
+    -fx-padding: 0;
+    -fx-pref-width: 150;
+    -fx-pref-height: 100;
+}
+.custom-menu-item:hover 
+{
+    -fx-background-color: black;
+    -fx-padding: 0;
+    -fx-pref-width: 150;
+    -fx-pref-height: 100;
+}
+
+.custom-menu-item .label 
+{
+    -fx-text-size: 30;
+}

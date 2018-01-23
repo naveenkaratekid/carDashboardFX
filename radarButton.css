@@ -1,0 +1,7 @@
+.toggle-button
+{
+	-fx-graphic: url('radar.png');
+	-fx-background-repeat: no-repeat;
+	-fx-background-position: center;
+	-fx-background-color: black;
+}
