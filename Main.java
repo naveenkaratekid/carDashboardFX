@@ -97,12 +97,15 @@ public class Main extends Application
         String source = newPlayer.getMedia().getSource();
         source = source.substring(0, source.length() - extensionLength);
         source = source.substring(source.lastIndexOf("/") + 1).replaceAll("%20", " ");
-        currentlyPlaying.setText("Now Playing: " + source );
-    }
+        String songInfo = "Now Playing: " + source + "\nArtist: " + artist;
+        currentlyPlaying.setText(songInfo);
+        //currentlyPlaying.setText(String.format("Now Playing: %s \nArtist: %s", source, artist));
+    } 
   
-    private void createControls(int i)
+    private void createControls()
     {
           artist = new Label();
+          artist.setWrapText(true);
           artist.setId("artist");
     }
     
@@ -204,7 +207,9 @@ public class Main extends Application
         {
           MediaPlayer player = players.get(i);
           MediaPlayer nextPlayer = players.get((i + 1) % players.size());
-          createControls(i);
+          //createControls(i);
+          createControls();
+          
           player.setOnEndOfMedia(new Runnable() 
           {
             public void run() 
@@ -212,7 +217,8 @@ public class Main extends Application
               player.currentTimeProperty().removeListener(progressListener);
               player.getMedia().getMetadata().removeListener(metaChangeListener);
               player.stop();
-              player.getMedia().getMetadata().get("artist");     
+              //player.getMedia().getMetadata().get("artist");
+              //mediaView.getMediaPlayer().getMedia().getMetadata().get("artist");
               mediaView.setMediaPlayer(nextPlayer);
               nextPlayer.play();
             }
@@ -220,6 +226,43 @@ public class Main extends Application
           );
         }
         
+        /*
+         code below is for the volume slider
+        
+         */
+
+        double volNum = mediaView.getMediaPlayer().getVolume();
+        Label vol = new Label();
+        vol.setFont(new Font("Arial", 15));
+        vol.setTextFill(Color.BLACK);
+        vol.setText(Double.toString(volNum));
+        vol.setTranslateX(460);
+        vol.setTranslateY(-5050);
+        Slider volume = new Slider(0,100,volNum);
+        volume.getStylesheets().add(this.getClass().getResource("volumeStyle.css").toExternalForm());
+        volume.setShowTickLabels(false);
+        volume.setOrientation(Orientation.VERTICAL);
+        volume.setSnapToTicks(false);
+        volume.setMinWidth(250);
+        volume.setMinHeight(400);
+        volume.setMaxWidth(250);
+        volume.setMaxHeight(400);
+        //volume.setValue(mediaView.getMediaPlayer().getVolume() * 100); // 1.0 = max 0.0 = min
+        double curVol = mediaView.getMediaPlayer().getVolume() * 100;
+        volume.setValue(curVol);
+        volume.valueProperty().addListener(new InvalidationListener() 
+        {
+            public void invalidated(javafx.beans.Observable observable) 
+            {
+                mediaView.getMediaPlayer().setVolume(volume.getValue() / 100);
+            }
+        }
+        );
+        
+        vol.textProperty().bind(volume.valueProperty().asString("Vol: %.0f"));
+        volume.setTranslateX(365);
+        volume.setTranslateY(-4630);
+
         //next track.
         skip.setOnAction(new EventHandler<ActionEvent>() 
         {
@@ -231,14 +274,16 @@ public class Main extends Application
             int i = (players.indexOf(curPlayer) + 1) % players.size();
             MediaPlayer nextPlayer = players.get(i);
             mediaView.setMediaPlayer(nextPlayer);
+            nextPlayer.setVolume(volume.getValue() / 100);
             boolean playing = curPlayer.getStatus().equals(Status.PLAYING);
             //System.out.println(playing);
             if(playing)
             {
                  curPlayer.stop();
                  nextPlayer.play();
+                 
             }
-           
+            
             //nextPlayer.play();
           }
         }
@@ -258,15 +303,18 @@ public class Main extends Application
             if(i < 0)
             {
                 i = players.size() - 1;
-                createControls(i);
+                createControls();
             }
             MediaPlayer prevPlayer = players.get(i);
-            mediaView.setMediaPlayer(prevPlayer);   
+            mediaView.setMediaPlayer(prevPlayer);
+            
             boolean playing = curPlayer.getStatus().equals(Status.PLAYING);
             if(playing)
             {
                  curPlayer.stop();
+                 prevPlayer.setVolume(volume.getValue() / 100);
                  prevPlayer.play();
+                 
             }
             
             }
@@ -312,10 +360,11 @@ public class Main extends Application
         mediaView.setTranslateY(-4000);
         
         artist.setFont(new Font("Arial", 20));
-        artist.setTranslateX(700);
-        artist.setTranslateY(-4200);
+        artist.setTranslateX(300);
+        artist.setTranslateY(-5000);
         
         currentlyPlaying.setFont(new Font("Arial", 20));
+        currentlyPlaying.setWrapText(true);
         currentlyPlaying.setTranslateX(600);
         currentlyPlaying.setTranslateY(-4000);
         
@@ -331,7 +380,7 @@ public class Main extends Application
         
          */
 
-        double volNum = mediaView.getMediaPlayer().getVolume();
+        /*double volNum = mediaView.getMediaPlayer().getVolume();
         Label vol = new Label();
         vol.setFont(new Font("Arial", 15));
         vol.setTextFill(Color.BLACK);
@@ -358,10 +407,9 @@ public class Main extends Application
         }
         );
         
-        
         vol.textProperty().bind(volume.valueProperty().asString("Vol: %.0f"));
         volume.setTranslateX(365);
-        volume.setTranslateY(-4630);
+        volume.setTranslateY(-4630);*/
         
         
         
@@ -649,7 +697,7 @@ public class Main extends Application
                         if(iv1.getTranslateY() <= -514)
                         {
                            iv1.setTranslateY(-514);
-                           System.out.println("Line reached max -514");
+                           //System.out.println("Line reached max -514");
                            
                         }
                         else
@@ -673,7 +721,7 @@ public class Main extends Application
                         if(iv1.getTranslateY() >= -363)
                         {
                            iv1.setTranslateY(-363);
-                           System.out.println("Line reached min -363");
+                           //System.out.println("Line reached min -363");
                         }
                         else
                         {
@@ -695,7 +743,7 @@ public class Main extends Application
                         if(iv2.getTranslateX() <= 425)
                         {
                             iv2.setTranslateX(425);
-                            System.out.println("Line reached min -425");
+                            //System.out.println("Line reached min -425");
                         }
                         else
                         {
@@ -716,7 +764,7 @@ public class Main extends Application
                         if(iv2.getTranslateX() >= 576)
                         {
                             iv2.setTranslateX(576);
-                            System.out.println("Line reached min -576");
+                            //System.out.println("Line reached min -576");
                         }
                         else
                         {
