@@ -105,7 +105,7 @@ public class Main extends Application
     private void createControls()
     {
           artist = new Label();
-          artist.setWrapText(true);
+          //artist.setWrapText(true);
           artist.setId("artist");
     }
     
@@ -149,12 +149,12 @@ public class Main extends Application
         return player;
     }
     
-    public void start(Stage stage)
+    public void start(Stage stage) throws Exception
     {
         /*------------------------------------------------Audio Player------------------------------------------------*/
         List<String> pars = getParameters().getRaw();
         // NOTE: Line below: You will have to modify the directory path in order for it to work. Or it will throw exception
-        File dir = (pars.size() > 0)? new File(pars.get(0)): new File("C:\\Users\\Naveen K\\Desktop\\screen\\music"); // NOTE: You will have to modify the directory on your computer so that the music can play.
+        File dir = (pars.size() > 0)? new File(pars.get(0)): new File("C:\\Users\\Naveen K\\Desktop\\screen\\carDashboardFX-master\\music"); // NOTE: You will have to modify the directory on your computer so that the music can play.
         if (!dir.exists() || !dir.isDirectory()) 
         {
           System.out.println("Source can't be found");
@@ -236,7 +236,7 @@ public class Main extends Application
         vol.setFont(new Font("Arial", 15));
         vol.setTextFill(Color.BLACK);
         vol.setText(Double.toString(volNum));
-        vol.setTranslateX(460);
+        vol.setTranslateX(495);
         vol.setTranslateY(-5050);
         Slider volume = new Slider(0,100,volNum);
         volume.getStylesheets().add(this.getClass().getResource("volumeStyle.css").toExternalForm());
@@ -260,7 +260,7 @@ public class Main extends Application
         );
         
         vol.textProperty().bind(volume.valueProperty().asString("Vol: %.0f"));
-        volume.setTranslateX(365);
+        volume.setTranslateX(400);
         volume.setTranslateY(-4630);
 
         //next track.
@@ -288,7 +288,7 @@ public class Main extends Application
           }
         }
         );
-        skip.setTranslateX(810);
+        skip.setTranslateX(850);
         skip.setTranslateY(-3800);
         
         // previous track.
@@ -320,7 +320,7 @@ public class Main extends Application
             }
         }
         );
-        previous.setTranslateX(575);
+        previous.setTranslateX(615);
         previous.setTranslateY(-3860);
         
         // Play and pause
@@ -343,7 +343,7 @@ public class Main extends Application
           }
         }
         );
-        play.setTranslateX(696);
+        play.setTranslateX(736);
         play.setTranslateY(-3770);
         play.setTranslateY(-3740);
         
@@ -365,7 +365,7 @@ public class Main extends Application
         
         currentlyPlaying.setFont(new Font("Arial", 20));
         currentlyPlaying.setWrapText(true);
-        currentlyPlaying.setTranslateX(600);
+        currentlyPlaying.setTranslateX(700);
         currentlyPlaying.setTranslateY(-4000);
         
         mediaView.setMediaPlayer(players.get(0));
@@ -1101,14 +1101,14 @@ public class Main extends Application
         /*------------------------------------------------Driver AC------------------------------------------------*/
         ToggleGroup togG = new ToggleGroup();
         ToggleButton ac = new ToggleButton("A/C");
-        ac.getStylesheets().add(this.getClass().getResource("autoStyle.css").toExternalForm());
+        ac.getStylesheets().add(this.getClass().getResource("AutoStyle.css").toExternalForm());
         ac.setSelected(false);
         ac.setTranslateX(212);
         ac.setTranslateY(-2815);
         
         /*------------------------------------------------Pass AC------------------------------------------------*/
         ToggleButton acPass = new ToggleButton("A/C");
-        acPass.getStylesheets().add(this.getClass().getResource("autoStyle.css").toExternalForm());
+        acPass.getStylesheets().add(this.getClass().getResource("AutoStyle.css").toExternalForm());
         acPass.setSelected(false);
         acPass.setTranslateX(1235);
         acPass.setTranslateY(-2859);
@@ -1227,7 +1227,7 @@ public class Main extends Application
         
         // NOTE: We are assuming that there are physical analog controls
         /*----------------------------------------------------------------------------------*/
-       
+        
         /*------------------------------------------------------------------------------------------*/
         
         /*       Heated Cooled Seat display button for driver       */
@@ -1998,7 +1998,7 @@ public class Main extends Application
         {
             public void handle(ActionEvent e)
             {
-                radarCruise rc = new radarCruise();
+                RadarCruise rc = new RadarCruise();
                 Group root = new Group();
                 root.getChildren().addAll(rc);
                 statusBar.setVisible(true);
@@ -2010,47 +2010,47 @@ public class Main extends Application
         
         
         /*------------------------------------------------Driver Auto------------------------------------------------*/
-        auto auto = new auto();
-        auto.setText("AUTO");
-        auto.create(s1);
-        auto.setTranslateX(200);
-        auto.setTranslateY(-2790);
-        auto.getStylesheets().add(this.getClass().getResource("autoStyle.css").toExternalForm());
-        auto.setOnAction(new EventHandler<ActionEvent>()
+        Auto Auto = new Auto();
+        Auto.setText("AUTO");
+        Auto.create(s1);
+        Auto.setTranslateX(200);
+        Auto.setTranslateY(-2790);
+        Auto.getStylesheets().add(this.getClass().getResource("AutoStyle.css").toExternalForm());
+        Auto.setOnAction(new EventHandler<ActionEvent>()
         {
             public void handle(ActionEvent e)
             {
                 s1.setValue(s1.getMax());
-                auto.setSelected(true);
+                Auto.setSelected(true);
             }
         }
         );
         s1.valueProperty().addListener((observable, oldValue, newValue) -> 
         {
-            auto.setSelected(false);
+            Auto.setSelected(false);
         }
         );
 
         /*------------------------------------------------Pass Auto------------------------------------------------*/
-        auto automaticPass = new auto();
-        automaticPass.setText("AUTO");
-        automaticPass.create(s1Pass);
-        automaticPass.setTranslateX(1225);
-        automaticPass.setTranslateY(-2834);
-        automaticPass.getStylesheets().add(this.getClass().getResource("autoStyle.css").toExternalForm());
-        automaticPass.setOnAction(new EventHandler<ActionEvent>()
+        Auto AutomaticPass = new Auto();
+        AutomaticPass.setText("AUTO");
+        AutomaticPass.create(s1Pass);
+        AutomaticPass.setTranslateX(1225);
+        AutomaticPass.setTranslateY(-2834);
+        AutomaticPass.getStylesheets().add(this.getClass().getResource("AutoStyle.css").toExternalForm());
+        AutomaticPass.setOnAction(new EventHandler<ActionEvent>()
         {
             public void handle(ActionEvent e)
             {
                 s1Pass.setValue(s1.getMax());
-                automaticPass.setSelected(true);
+                AutomaticPass.setSelected(true);
             }
         }
         );
         
         s1Pass.valueProperty().addListener((observable, oldValue, newValue) -> 
         {
-            automaticPass.setSelected(false);
+            AutomaticPass.setSelected(false);
         }
         );
         
@@ -2173,6 +2173,82 @@ public class Main extends Application
         
         syncTemperaturePass.setTranslateX(1065);
         syncTemperaturePass.setTranslateY(-3288);
+        
+        /*-------------------------------Voice Command Button-------------------------------*/
+        Image voiceCMD = new Image(getClass().getResourceAsStream("voice2.png"));
+        Button voice = new Button();
+        voice.setGraphic(new ImageView(voiceCMD));
+        voice.setId("voice");
+        Speech speech = new Speech();
+        voice.setOnAction(new EventHandler<ActionEvent>()
+        {
+            public void handle(ActionEvent ae)
+            {
+                try
+                {
+                    String result = speech.launchVoice();
+                    if(result.equals("Seat Cold"))
+                    {
+                        s.setValue(6);
+                        //System.out.println("Ok. I have turned on your cooled seat to the max setting");
+                        
+                    }
+                    
+                    else if(result.equals("Seat Hot"))
+                    {
+                        s.setValue(-6);
+                        //System.out.println("Ok. I have turned on your heated seat to the max setting");
+                        
+                    }
+                    else if(result.equals("Hot"))
+                    {
+                        s2.setValue(s2.getValue() + 5);
+                    }
+                    
+                    else if(result.equals("Cold"))
+                    {
+                        s2.setValue(s2.getValue() - 5);
+                    }
+                    
+                    else if(result.equals("Steering Hot"))
+                    {
+                        steeringWheel.setValue(0);
+                    }
+                    
+                    else if(result.equals("Steering Cold"))
+                    {
+                        steeringWheel.setValue(2);
+                    }
+                    
+                    else if(result.equals("Fan Increase"))
+                    {
+                        s1.setValue(s1.getValue() + 2);
+                    }
+                    
+                    else if(result.equals("Fan Decrease"))
+                    {
+                        s1.setValue(s1.getValue() - 1);
+                    }
+                    
+                    else if(result.equals("A/C"))
+                    {
+                        ac.setSelected(true);
+                    }
+                }
+                catch(Exception e)
+                {
+                    
+                }
+            }
+        }
+        );
+        //voice.getStylesheets().add(this.getClass().getResource("buttonStyle.css").toExternalForm());
+        voice.setTranslateX(510);
+        voice.setTranslateY(-5100);
+        
+        /*vol.setTranslateX(495);
+        vol.setTranslateY(-5050);
+           */
         /*------------------------------------------------------------------------------------------------*/
         VBox root3 = new VBox(root, root2);
         Scene scene = new Scene(root3);
@@ -2181,7 +2257,7 @@ public class Main extends Application
         Pane p1 = (Pane) s2Pass.lookup(".thumb");
         Label l = new Label();
         root3.getChildren().setAll(sPass, s, s1, s1Pass, s2, s2Pass);
-        root3.getChildren().addAll(lineView, defrost, rearDefrost, auto, automaticPass, ac, acPass, zone, faceZone, feetZone, zonePass, faceZonePass, feetZonePass, recirculate, recirculatePass, syncTemperature, syncTemperaturePass, syncFan, syncFanPass, play, skip, previous, mediaView, currentlyPlaying, fanAnimate, fanAnimatePass, equalizer, statusBar, radarCruise, temp, tempPass, c, /*seatPass,*/ /*seatDriver,*/ mb1, mb2, driverDisplay, passDisplay, mb, mode, volume, vol);
+        root3.getChildren().addAll(lineView, defrost, rearDefrost, Auto, AutomaticPass, ac, acPass, zone, faceZone, feetZone, zonePass, faceZonePass, feetZonePass, recirculate, recirculatePass, syncTemperature, syncTemperaturePass, syncFan, syncFanPass, play, skip, previous, mediaView, currentlyPlaying, fanAnimate, fanAnimatePass, equalizer, statusBar, radarCruise, temp, tempPass, c, /*seatPass,*/ /*seatDriver,*/ mb1, mb2, driverDisplay, passDisplay, mb, mode, volume, vol, voice);
         l.setFont(new Font("Arial", 20));
         l.textProperty().bind(s2.valueProperty().asString("%.0f").concat("°"));
         p.getChildren().add(l);

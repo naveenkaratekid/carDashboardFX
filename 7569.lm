@@ -1,0 +1,114 @@
+Language model created by QuickLM on Wed Jul  4 22:49:15 EDT 2018
+Copyright (c) 1996-2010 Carnegie Mellon University and Alexander I. Rudnicky
+
+The model is in standard ARPA format, designed by Doug Paul while he was at MITRE.
+
+The code that was used to produce this language model is available in Open Source.
+Please visit http://www.speech.cs.cmu.edu/tools/ for more information
+
+The (fixed) discount mass is 0.5. The backoffs are computed using the ratio method.
+This model based on a corpus of 11 sentences and 24 words
+
+\data\
+ngram 1=24
+ngram 2=33
+ngram 3=34
+
+\1-grams:
+-1.0792 </s> -0.3010
+-1.0792 <s> -0.2596
+-2.1206 AC -0.2977
+-1.6435 COLD -0.2632
+-2.1206 DOWN -0.2632
+-2.1206 ENOUGH -0.2944
+-1.8195 FAN -0.2944
+-1.8195 HEAT -0.2944
+-1.6435 HOT -0.2632
+-2.1206 HOT. -0.2910
+-1.5185 IS -0.2808
+-1.6435 I’M -0.2774
+-2.1206 MUCH -0.2944
+-1.5185 MY -0.2877
+-2.1206 NOT -0.2977
+-2.1206 ON -0.2632
+-1.8195 SEAT -0.2877
+-1.8195 SPEED -0.2632
+-1.8195 STEERING -0.2944
+-1.6435 THE -0.2910
+-2.1206 TOO -0.2977
+-1.6435 TURN -0.2910
+-2.1206 UP -0.2632
+-1.8195 WHEEL -0.2877
+
+\2-grams:
+-0.8653 <s> I’M 0.0000
+-0.7404 <s> MY 0.0000
+-1.3424 <s> NOT 0.0000
+-1.3424 <s> TOO 0.0000
+-1.0414 <s> TURN 0.0000
+-0.3010 AC ON 0.0000
+-0.3010 COLD </s> -0.3010
+-0.3010 DOWN </s> -0.3010
+-0.3010 ENOUGH FAN 0.0000
+-0.3010 FAN SPEED 0.0000
+-0.6021 HEAT DOWN 0.0000
+-0.6021 HEAT UP 0.0000
+-0.3010 HOT </s> -0.3010
+-0.3010 HOT. TURN 0.0000
+-0.6021 IS COLD 0.0000
+-0.6021 IS HOT 0.0000
+-0.7782 I’M COLD 0.0000
+-0.7782 I’M HOT 0.0000
+-0.7782 I’M HOT. 0.0000
+-0.3010 MUCH FAN 0.0000
+-0.6021 MY SEAT 0.0000
+-0.6021 MY STEERING 0.0000
+-0.3010 NOT ENOUGH 0.0000
+-0.3010 ON </s> -0.3010
+-0.3010 SEAT IS 0.0000
+-0.3010 SPEED </s> -0.3010
+-0.3010 STEERING WHEEL 0.0000
+-0.7782 THE AC 0.0000
+-0.4771 THE HEAT 0.0000
+-0.3010 TOO MUCH 0.0000
+-0.3010 TURN THE 0.0000
+-0.3010 UP </s> -0.3010
+-0.3010 WHEEL IS 0.0000
+
+\3-grams:
+-0.7782 <s> I’M COLD
+-0.7782 <s> I’M HOT
+-0.7782 <s> I’M HOT.
+-0.6021 <s> MY SEAT
+-0.6021 <s> MY STEERING
+-0.3010 <s> NOT ENOUGH
+-0.3010 <s> TOO MUCH
+-0.3010 <s> TURN THE
+-0.3010 AC ON </s>
+-0.3010 ENOUGH FAN SPEED
+-0.3010 FAN SPEED </s>
+-0.3010 HEAT DOWN </s>
+-0.3010 HEAT UP </s>
+-0.3010 HOT. TURN THE
+-0.3010 IS COLD </s>
+-0.3010 IS HOT </s>
+-0.3010 I’M COLD </s>
+-0.3010 I’M HOT </s>
+-0.3010 I’M HOT. TURN
+-0.3010 MUCH FAN SPEED
+-0.3010 MY SEAT IS
+-0.3010 MY STEERING WHEEL
+-0.3010 NOT ENOUGH FAN
+-0.6021 SEAT IS COLD
+-0.6021 SEAT IS HOT
+-0.3010 STEERING WHEEL IS
+-0.3010 THE AC ON
+-0.6021 THE HEAT DOWN
+-0.6021 THE HEAT UP
+-0.3010 TOO MUCH FAN
+-0.7782 TURN THE AC
+-0.4771 TURN THE HEAT
+-0.6021 WHEEL IS COLD
+-0.6021 WHEEL IS HOT
+
+\end\

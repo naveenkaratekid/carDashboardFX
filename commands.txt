@@ -1,0 +1,22 @@
+I’m cold
+
+I’m hot
+
+Turn the heat up
+
+Turn the heat down
+
+My steering wheel is cold
+
+My steering wheel is hot
+
+My seat is hot
+
+My seat is cold
+
+I’m hot. Turn the AC on
+
+Too much fan speed
+
+Not enough fan speed
+
